@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import { ButtonBackHome } from "../components/ButtonBackHome";
 
 const API_KEY = "2e0d12d1";
 
@@ -24,10 +25,6 @@ export class Detail extends Component {
       });
   }
 
-  _goback() {
-    window.history.back();
-  }
-
   componentDidMount() {
     console.log(this.props);
     const { id } = this.props.match.params;
@@ -38,7 +35,7 @@ export class Detail extends Component {
     const { Title, Actors, Poster, Metascore, Plot } = this.state.movie;
     return (
       <div>
-        <button onClick={this._goback}>Volver</button>
+        <ButtonBackHome />
         <h1>{Title}</h1>
         <img src={Poster} alt={Title} />
         <h3>{Actors}</h3>
